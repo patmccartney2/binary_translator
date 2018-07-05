@@ -1,4 +1,5 @@
 class BinaryTranslator
+
   def initialize
     @alpha_to_binary = {
       "a" => "000001",
@@ -26,7 +27,30 @@ class BinaryTranslator
       "w" => "010111",
       "x" => "011000",
       "y" => "011001",
-      "z" => "011010"
-    }
+      "z" => "011010",
+      " " => "000000"
+                      }
   end
+
+  def translate(to_be_translated)
+    translated = []
+    split = to_be_translated.downcase.chars
+    split.each do |character|
+      translated << @alpha_to_binary[character]
+    end
+    return translated.join
+  end
+
+  # def translate_to_text(binary)
+  #   translated = []
+  #   length = binary.chars.length
+  #   words_split = binary.chars.each_with_index do |charac|
+  #
+  #   words_split.each do |word|
+  #     translated << @aplha_to_binary.fetch(word)
+  #   end
+  #   return translated
+  # end
+
+
 end
